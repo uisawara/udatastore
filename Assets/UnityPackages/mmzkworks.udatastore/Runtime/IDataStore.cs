@@ -16,5 +16,7 @@ namespace mmzkworks.DataStore
         UniTask<float> GetFloatAsync(string key);
         UniTask<bool> GetBoolAsync(string key);
         UniTask<string> GetStringAsync(string key);
+        UniTask DeleteAllAsync();
+        UniTask DeleteAsync(string key);
     }
 }

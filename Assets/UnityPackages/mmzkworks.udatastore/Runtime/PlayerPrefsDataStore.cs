@@ -86,6 +86,18 @@ namespace mmzkworks.DataStore
             return UniTask.FromResult(value);
         }
 
+        public UniTask DeleteAllAsync()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public UniTask DeleteAsync(string key)
+        {
+            var persistentKey = GetPersistentKey(key);
+            PlayerPrefs.DeleteKey(persistentKey);
+            return UniTask.CompletedTask;
+        }
+
         private string GetPersistentKey(string key)
         {
             return _keyPrefix + key;
